@@ -2,11 +2,6 @@
 #include <stdlib.h>
 #include <math.h>
 
-/*
-int cmp(const void *p1, const void *p2) {
-	return *(int *)b - *(int *)a;
-}*/
-
 int main() {
 	int sci[20] = {65, 80, 67, 35, 58, 60, 72, 75, 68, 92, 36, 50, 25, 85, 46, 42, 78, 62, 84, 70};
 	int eng[20] = {44, 87, 100, 63, 52, 60, 58, 73, 55, 86, 29, 56, 89, 23, 65, 84, 64, 27, 86, 84};
@@ -45,7 +40,6 @@ int main() {
 		printf("   %7.2f\n", i + 1, (eng[i] - avg_e) / sdd_e * 10 + 50);
 	}
 
-	//qsort(sci, 20, sizeof(int), cmp);
 	int sorted_sci[20][2] = {0};
 	int max = 0, id = 0;
 	for (int i = 0; i < 20; i++) {
@@ -53,13 +47,11 @@ int main() {
 			if (sci[j] > max){
 				max = sci[j];
 				id = j;
-				//printf("larger.\n");
 			}
 		}
 		sorted_sci[i][0] = id;
 		sorted_sci[i][1] = max;
 		sci[id] = -1;
-		//printf("%d\n", i);
 		max = 0;
 		id = 0;
 	}
